@@ -10,10 +10,6 @@ INCFLAGS   := \
 	-I$(LIBRETRO_COMM_DIR)/include \
 	-I$(CORE_DIR)/include \
 
-ifneq (,$(findstring msvc2003,$(platform)))
-INCFLAGS += -I$(LIBRETRO_COMM_DIR)/include/compat/msvc
-endif
-
 SOURCES_C :=  \
 	$(CORE_DIR)/common/cl_input.c \
 	$(CORE_DIR)/common/cd_common.c \

@@ -757,6 +757,10 @@ LDFLAGS += $(CODECLIBS)
 
 include Makefile.common
 
+ifneq (,$(findstring msvc2003,$(platform)))
+INCFLAGS += -I$(LIBRETRO_COMM_DIR)/include/compat/msvc
+endif
+
 OBJECTS    = $(SOURCES_C:.c=.o)
 
 DEFINES    = -DHAVE_STRINGS_H -DHAVE_STDINT_H -DHAVE_INTTYPES_H -D__LIBRETRO__ -DNQ_HACK -DQBASEDIR=$(CORE_DIR) -DTYR_VERSION=0.62
